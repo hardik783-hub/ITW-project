@@ -34,3 +34,13 @@ def simplify(payload: topicInput):
         "summary_source": "Wikipedia",
         "simplified_explanation": result.message["content"][0]["text"]
     }
+
+from fastapi.middleware.cors import CORSMiddleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"], 
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+app= app
